@@ -26,13 +26,13 @@ class MainActivity : AppCompatActivity() {
     private fun rewrite() {
         val states = arrayOf("Starting", "Doing Task 1", "Doing Task 2", "Ending")
         repeat(3) {
-            Thread {
+            GlobalScope.launch {
                 println("${Thread.currentThread()} has started")
                 for (i in states) {
                     println("${Thread.currentThread()} - $i")
-                    Thread.sleep(50)
+                    delay(50)
                 }
-            }.start()
+            }
         }
     }
 

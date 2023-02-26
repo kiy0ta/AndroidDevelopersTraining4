@@ -30,7 +30,9 @@ class MainActivity : AppCompatActivity() {
                 println("${Thread.currentThread()} has started")
                 for (i in states) {
                     println("${Thread.currentThread()} - $i")
-                    delay(50)
+                    // Thread.sleep(50)
+                    // suspend delay(5000)
+                    delay(5000)
                 }
             }
         }
